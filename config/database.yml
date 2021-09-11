@@ -20,6 +20,12 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # start: user added
+  username: <%= ENV['pgusr'] %>
+  password: <%= ENV['pgpwd'] %>
+  host: <%= ENV['pghst'] %>
+  port: <%= ENV['pgprt'] %>
+  # end: user added
 
 development:
   <<: *default
